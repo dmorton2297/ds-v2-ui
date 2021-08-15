@@ -8,11 +8,11 @@ const propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
 }
+
 export const TopNav = ({ icon, title }) => {
   const [menuHover, setMenuHover] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
 
-  console.log(menuActive)
   return (
     <NavigationBar>
       <AppIconContainer>

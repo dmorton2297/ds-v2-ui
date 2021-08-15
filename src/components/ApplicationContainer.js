@@ -1,12 +1,12 @@
-import PageGroup from "./common/page-group/PageGroup";
-import { TopNav } from "./common/top-navigation/TopNav";
-const test = () => {
-  return <div>Test 1</div>
-}
-
-const test2 = () => {
-  return <div>Test 2</div>
-}
+import { TopNav } from "./common/top-nav/TopNav";
+import { ApplicationLayout, AppContentContainer, Footer } from './ApplicationStyles';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Profile from "./core/pages/profile/profile";
 
 /**
  * Root element of the application
@@ -14,8 +14,18 @@ const test2 = () => {
  */
 export default function ApplicationContainer() {
   return (
-    <>
+    <ApplicationLayout>
       <TopNav icon="react.svg" title="Devspace" />
-    </>
+      <AppContentContainer>
+        <Router>
+          <Switch>
+            <Route path="/">
+              <Profile />
+            </Route>
+          </Switch>
+        </Router>
+      </AppContentContainer>
+      <Footer>ds-2 prototype</Footer>
+    </ApplicationLayout>
   );
 };
